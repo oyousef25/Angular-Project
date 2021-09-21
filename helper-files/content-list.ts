@@ -2,7 +2,7 @@ import {Content} from "./Content";
 
 export class ContentList{
   static countItems = 0;
-  _items: Content[];
+  private _items: Content[];
 
   //Constructor
   constructor(item: Content) {
@@ -17,8 +17,8 @@ export class ContentList{
   }
 
   //A function that adds a new item to the end of the array
-  addItemToContents(item:Content): void{
-    this.items.push(item);
+  set items(newItems:Content[]){
+    this.items.push(newItems[0]);
   }
 
   //A function that keeps track of how many items we have
@@ -26,8 +26,20 @@ export class ContentList{
     return ++ContentList.countItems;
   }
 
-  //Optional: A function that takes an input of an index and returns a html output
+  //A function that takes an input of an index and returns a html output
+  displayHtml(indexNum: number): string{
+    //Locate the item object in the array
+    let items = this.items
+    let item = items[indexNum];
 
+    //Create a clean html layout
+    let htmlDisplay = "<h1>" + item.author + "</h1>\n" +
+      "<h2>" + item.title + "</h2>\n" +
+      "<p>" + item.body + "</p>";
+
+    //Return the html display
+    return htmlDisplay;
+  }
 
 
 }
