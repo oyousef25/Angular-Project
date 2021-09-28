@@ -1,6 +1,5 @@
-<div *ngFor="let item of items">
-  <!-- {{content.id}} -->
-  <img src="{{content.imageUrl}}">
-  <span class="body">{{content.body}}</span>
-  <span class="type">{{content.type}}</span>
-</div>
+
+
+<app-content-card *ngFor="let item of contentArray" [content] = "item">
+
+</app-content-card>

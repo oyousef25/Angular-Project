@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../../../helper-files/Content";
 
 @Component({
@@ -7,14 +7,17 @@ import {Content} from "../../../helper-files/Content";
   styleUrls: ['./content-card.component.css']
 })
 export class ContentCardComponent implements OnInit {
+  @Input() content: Content;
 
-  ngOnInit(): void {
+  constructor() {
     //Create a new instance of the Content interface
-     let contentItem1: Content = {
+    this.content = {
       id: 1024,
       author: 'Alex',
       title: 'javascript frameworks',
       body: 'javascript is the best'
     };
+  }
+  ngOnInit(): void {
   }
 }

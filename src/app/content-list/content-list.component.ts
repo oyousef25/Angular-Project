@@ -8,8 +8,15 @@ import {Content} from "../../../helper-files/Content";
 })
 export class ContentListComponent implements OnInit {
   @Input() contentArray: Content[];
+  @Input() content: Content;
 
   constructor() {
+    this.content = {
+      id: 0,
+      author: '',
+      title: '',
+      body: ''
+    }
     this.contentArray = [{
       id: 1023,
       author: 'Omar',
