@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../../../helper-files/Content";
 
 @Component({
@@ -7,14 +7,10 @@ import {Content} from "../../../helper-files/Content";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
+  @Input() contentArray: Content[];
 
-  constructor() { }
-
-
-  //Add 3 items to it using our function that we made in the Content interface
-
-  ngOnInit(): void {
-    let items: Content[] = [{
+  constructor() {
+    this.contentArray = [{
       id: 1023,
       author: 'Omar',
       title: 'Mobile development and the future',
@@ -44,6 +40,12 @@ export class ContentListComponent implements OnInit {
         title: 'Peter is smart',
         body: 'I agree!'
       }];
+  }
+
+
+  //Add 3 items to it using our function that we made in the Content interface
+
+  ngOnInit(): void {
   }
 
 }
