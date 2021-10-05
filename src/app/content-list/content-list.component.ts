@@ -20,6 +20,7 @@ export class ContentListComponent implements OnInit {
     this.contentArray = [{
       id: 1023,
       author: 'Omar',
+      type: "creative",
       title: 'Mobile development and the future',
       body: 'Coding is amazing and stressful'
     },
@@ -27,24 +28,28 @@ export class ContentListComponent implements OnInit {
         id: 1022,
         author: 'Tom',
         title: 'Tom is cool',
+        type: "comedy",
         body: 'He is cool because he is'
       },
       {
         id: 1021,
         author: 'Dawn',
         title: 'Dawn is a good person',
+        type: "comedy",
         body: 'She is a good person!'
       },
       {
         id: 1021,
         author: 'Alex',
         title: 'Alex is amazing in Js',
+        type: "horror",
         body: 'We all know that'
       },
       {
         id: 1021,
         author: 'Peter',
         title: 'Peter is smart',
+        type: "action",
         body: 'I agree!'
       }];
   }
