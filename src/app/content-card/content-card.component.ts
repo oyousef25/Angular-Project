@@ -18,6 +18,11 @@ export class ContentCardComponent implements OnInit {
       body: 'javascript is the best'
     };
   }
+
+  showId(index: number){
+    console.log(index);
+  }
+
   ngOnInit(): void {
   }
 }

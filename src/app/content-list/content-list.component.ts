@@ -15,47 +15,57 @@ export class ContentListComponent implements OnInit {
       id: 0,
       author: '',
       title: '',
-      body: ''
+      body: '',
+      imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+      type: "string",
+      tags: ["string"]
     }
     this.contentArray = [{
       id: 1023,
       author: 'Omar',
-      type: "creative",
       title: 'Mobile development and the future',
-      body: 'Coding is amazing and stressful'
+      body: 'Coding is amazing and stressful',
+      imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+      type: "creative",
+      tags: ["string"]
     },
       {
         id: 1022,
         author: 'Tom',
         title: 'Tom is cool',
-        type: "comedy",
-        body: 'He is cool because he is'
+        body: 'He is cool because he is',
+        imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+        type: "horror",
+        tags: ["string"]
       },
       {
         id: 1021,
         author: 'Dawn',
         title: 'Dawn is a good person',
-        type: "comedy",
-        body: 'She is a good person!'
+        body: 'She is a good person!',
+        imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+        type: "horror",
+        tags: ["string"]
       },
       {
         id: 1021,
         author: 'Alex',
         title: 'Alex is amazing in Js',
-        type: "horror",
-        body: 'We all know that'
+        body: 'We all know that',
+        imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+        type: "comedy",
+        tags: ["string"]
       },
       {
         id: 1021,
         author: 'Peter',
         title: 'Peter is smart',
-        type: "action",
-        body: 'I agree!'
+        body: 'I agree!',
+        imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+        type: "comedy",
+        tags: ["string"]
       }];
   }
-
-
-  //Add 3 items to it using our function that we made in the Content interface
 
   ngOnInit(): void {
   }

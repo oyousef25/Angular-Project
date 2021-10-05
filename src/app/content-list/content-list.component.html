@@ -1,5 +1,21 @@
 
+<div class="type-form">
+  <input class="input-field" #value><br/>
+  <button class="submit-btn" type=submit> Submit!</button>
+</div>
 
-<app-content-card *ngFor="let item of contentArray" [content] = "item">
+<!--<app-content-card *ngFor="let item of contentArray; index as i; last as isLast" [content]="item" [class.is-last]="isLast">-->
+<!--</app-content-card>-->
+
+<app-content-card class="isHorror" *ngFor="let item of (contentArray | contentFilter: 'horror')"
+                  [content] = "item">
+
+</app-content-card>
+
+<app-content-card class="isCreative" *ngFor="let item of (contentArray | contentFilter: 'creative')" [content] = "item">
+
+</app-content-card>
+
+<app-content-card class="isComedy" *ngFor="let item of (contentArray | contentFilter: 'comedy')" [content] = "item">
 
 </app-content-card>
