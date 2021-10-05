@@ -9,6 +9,6 @@ import {Content} from "../../helper-files/Content";
 export class ContentFilterPipe implements PipeTransform {
 
   transform(contentList: Content[], type?: string) {
-    return contentList.filter(c => c.type == type ? c : "Not Found");
+    return contentList.filter(c => c.type == type);
   }
 }

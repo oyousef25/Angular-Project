@@ -24,4 +24,4 @@ import { ContentExistPipe } from './content-exist.pipe';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ }
