@@ -1,10 +1,12 @@
 
 <div class="type-form">
   <input class="input-field" #value><br/>
-  <button (click)="contentArray | contentExist: value.value" class="submit-btn" type=submit> Submit!</button>
+  <button class="submit-btn" type=submit> Submit!</button>
+<!--  <button (click)="contentArray | contentExist: value.value" class="submit-btn" type=submit> Submit!</button>-->
+
 </div>
 
-<app-content-card *ngFor="let item of (contentArray | contentFilter: value.value)"
+<app-content-card *ngFor="let item of (contentArray | contentExist: value.value)"
                   [content] = "item">
 </app-content-card>
 
