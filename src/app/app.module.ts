@@ -7,6 +7,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { ContentFilterPipe } from './content-filter.pipe';
 import {FormsModule} from "@angular/forms";
 import { ContentExistPipe } from './content-exist.pipe';
+import { UnderlineDirective } from './underline.directive';
 
 // @ts-ignore
 @NgModule({
@@ -15,7 +16,8 @@ import { ContentExistPipe } from './content-exist.pipe';
     ContentCardComponent,
     ContentListComponent,
     ContentFilterPipe,
-    ContentExistPipe
+    ContentExistPipe,
+    UnderlineDirective
   ],
   imports: [
     BrowserModule,

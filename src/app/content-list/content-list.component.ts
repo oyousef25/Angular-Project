@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Content} from "../../../helper-files/Content";
 
 
@@ -62,7 +62,6 @@ export class ContentListComponent implements OnInit {
         author: 'Peter',
         title: 'Peter is smart',
         body: 'I agree!',
-        imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
         type: "comedy",
         tags: ["string"]
       }];
@@ -70,5 +69,4 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
