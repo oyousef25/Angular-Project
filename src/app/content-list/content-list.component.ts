@@ -63,7 +63,7 @@ export class ContentListComponent implements OnInit {
         title: 'Peter is smart',
         body: 'I agree!',
         type: "comedy",
-        tags: ["string"]
+        tags: ["hummus", "string", "shawarma"]
       }];
   }
 

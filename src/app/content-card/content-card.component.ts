@@ -12,10 +12,13 @@ export class ContentCardComponent implements OnInit {
   constructor() {
     //Create a new instance of the Content interface
     this.content = {
-      id: 1024,
-      author: 'Alex',
-      title: 'javascript frameworks',
-      body: 'javascript is the best'
+      id: 0,
+      author: '',
+      title: '',
+      body: '',
+      imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+      type: "string",
+      tags: ["string"]
     };
   }
 
