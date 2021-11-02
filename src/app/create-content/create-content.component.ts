@@ -66,6 +66,7 @@ export class CreateContentComponent implements OnInit {
           }
           this.newCardEvent.emit(this.newCardItem);
           success("Item added successfully!");
+          this.errorMssg = "";
         }else{
           fail("Operation failed!");
         }
