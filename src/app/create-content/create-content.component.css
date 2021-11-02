@@ -25,3 +25,7 @@
   padding: 15px;
   margin: 25px;
 }
+
+.div-create-content-form form p{
+  color: red;
+}

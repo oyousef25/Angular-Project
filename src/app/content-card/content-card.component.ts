@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../../../helper-files/Content";
+import {createComponent} from "@angular/compiler/src/core";
 
 @Component({
   selector: 'app-content-card',

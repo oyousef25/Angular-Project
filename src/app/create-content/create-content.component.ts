@@ -8,7 +8,7 @@ import {Content} from "../../../helper-files/Content";
 })
 export class CreateContentComponent implements OnInit {
   @Output() newCardEvent = new EventEmitter<Content>();
-  public newCardItem: Content;
+  newCardItem: Content;
 
   /*
     card properties
@@ -21,6 +21,9 @@ export class CreateContentComponent implements OnInit {
   public body: string;
   public tags: string[];
 
+  //error message in case there was empty fields
+  public errorMssg: string;
+
   constructor() {
     this.id = 0;
     this.author = "";
@@ -30,14 +33,17 @@ export class CreateContentComponent implements OnInit {
     this.body = "";
     this.tags = [""];
 
+    //error
+    this.errorMssg = "";
+
     this.newCardItem = {
-      author: this.author,
-      body: this.body,
-      id: this.id,
-      imgUrl: this.imgUrl,
-      tags: this.tags,
-      title: this.title,
-      type: this.type
+      author: "",
+      body: "",
+      id: 0,
+      imgUrl: "",
+      tags: [],
+      title: "",
+      type: ""
     }
   }
 
@@ -45,15 +51,42 @@ export class CreateContentComponent implements OnInit {
   }
 
   addNewCard(){
-    let cardPromise = new Promise((success, fail)=>{
-      let testSuccess= true;
-      if(testSuccess){
-        this.newCardEvent.emit(this.newCardItem);
-        success("Item added successfully!");
-      }else{
-        fail("Operation failed!");
-      }
-    }).then(successResult =>
-    console.log(successResult)).catch(failResult => console.log(failResult));
+    if (this.author != "" && this.body != "" && this.id != 0 && this.imgUrl != "" && this.tags != [] && this.title != "" && this.type != ""){
+      let cardPromise = new Promise((success, fail)=>{
+        let testSuccess= true;
+        if(testSuccess){
+          this.newCardItem = {
+            author: this.author,
+            body: this.body,
+            id: this.id,
+            imgUrl: this.imgUrl,
+            tags: this.tags,
+            title: this.title,
+            type: this.type
+          }
+          this.newCardEvent.emit(this.newCardItem);
+          success("Item added successfully!");
+        }else{
+          fail("Operation failed!");
+        }
+      }).then(successResult =>
+        console.log(successResult)).catch(failResult => console.log(failResult));
+    }else{
+      console.log("All fields must have values and ID must be more higher than 0")
+      this.errorMssg = "All fields must have values and ID must be more higher than 0";
+    }
+
+    //Reset form inputs
+    this.resetForm();
+  }
+
+  resetForm(){
+  this.id = 0;
+  this.author = "";
+  this.imgUrl = "";
+  this.type = "";
+  this.title = "";
+  this.body = "";
+  this.tags = [];
   }
 }
