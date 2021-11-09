@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import { ContentExistPipe } from './content-exist.pipe';
 import { UnderlineDirective } from './underline.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
+import { MessagesComponent } from './messages/messages.component';
 
 // @ts-ignore
 @NgModule({
@@ -19,7 +20,8 @@ import { CreateContentComponent } from './create-content/create-content.componen
     ContentFilterPipe,
     ContentExistPipe,
     UnderlineDirective,
-    CreateContentComponent
+    CreateContentComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
