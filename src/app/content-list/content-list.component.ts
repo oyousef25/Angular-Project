@@ -29,7 +29,11 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contentArray = this.contentService.getContentObs();
+    //this.contentArray = this.contentService.getContent();
+
+    this.contentService.getContentObs().subscribe(
+      contentArray => this.contentArray = contentArray
+    );
   }
 
   addToContentList(newContentCard: Content){
