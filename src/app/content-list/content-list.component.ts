@@ -31,15 +31,8 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
     //this.contentArray = this.contentService.getContent();
 
-    this.contentService.getContentObs().subscribe(
+    this.contentService.getContent().subscribe(
       contentArray => this.contentArray = contentArray
     );
-  }
-
-  addToContentList(newContentCard: Content){
-    this.contentArray.push(newContentCard);
-    this.contentArray = Object.assign([], this.contentArray);
-    console.log("content-list test");
-    console.log(this.contentArray);
   }
 }

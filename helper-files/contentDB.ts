@@ -1,7 +1,7 @@
 import {Input} from "@angular/core";
 import {Content} from "./Content";
 
-export const CONTENTARRAY: Content[] = [{
+export const contents: Content[] = [{
   id: 1023,
   author: 'Omar',
   title: 'Mobile development and the future',
