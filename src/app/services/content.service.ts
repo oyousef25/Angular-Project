@@ -19,13 +19,13 @@ export class ContentService {
   }
 
   getContent(): Observable<Content[]> {
-    return this.http.get<Content[]>("api/content");
+    return this.http.get<Content[]>("api/contents");
   }
 
   addContent(content: Content): Observable<Content> {
-    return this.http.post<Content>("api/content", content, this.httpOptions);
+    return this.http.post<Content>("api/contents", content, this.httpOptions);
   }
   updateContent(content: Content): Observable<any> {
-    return this.http.put("api/content", content, this.httpOptions);
+    return this.http.put("api/contents", content, this.httpOptions);
   }
 }
