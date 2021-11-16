@@ -10,6 +10,7 @@ import { ContentExistPipe } from './content-exist.pipe';
 import { UnderlineDirective } from './underline.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { MessagesComponent } from './messages/messages.component';
+import { CreateComponentComponent } from './create-component/create-component.component';
 
 // @ts-ignore
 @NgModule({
@@ -21,7 +22,8 @@ import { MessagesComponent } from './messages/messages.component';
     ContentExistPipe,
     UnderlineDirective,
     CreateContentComponent,
-    MessagesComponent
+    MessagesComponent,
+    CreateComponentComponent
   ],
   imports: [
     BrowserModule,
