@@ -8,7 +8,7 @@ import {MessageService} from "../message.service";
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.css']
+  styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
   @Input() contentArray: Content[];

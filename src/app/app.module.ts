@@ -10,6 +10,8 @@ import { ContentExistPipe } from './content-exist.pipe';
 import { UnderlineDirective } from './underline.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { MessagesComponent } from './messages/messages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
 
 // @ts-ignore
 @NgModule({
@@ -23,10 +25,12 @@ import { MessagesComponent } from './messages/messages.component';
     CreateContentComponent,
     MessagesComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
