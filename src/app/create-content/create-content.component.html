@@ -1,27 +1,22 @@
 <div class="div-create-content-form">
-  <form>
-    <label>ID:</label><br>
-    <input [(ngModel)]="id" name="id"><br>
+  <mat-form-field>
+    <input placeholder="ID" [(ngModel)]="id" name="id"><br>
 
-    <label for="card_author">Author:</label><br>
-    <input id="card_author" type="text" [(ngModel)]="author" name="author"><br>
+    <input matInput placeholder="Author" id="card_author" type="text" [(ngModel)]="author" name="author"><br>
 
-    <label for="card_imgurl">Image URL:</label><br>
-    <input id="card_imgurl" type="text" [(ngModel)]="imgUrl" name="imgUrl"><br>
+    <input matInput placeholder="Image URL"  id="card_imgurl" type="text" [(ngModel)]="imgUrl" name="imgUrl"><br>
 
-    <label for="card_type">Type:</label><br>
-    <input id="card_type" type="text" [(ngModel)]="type" name="type"><br>
+    <input matInput placeholder="Type" id="card_type" type="text" [(ngModel)]="type" name="type"><br>
 
-    <label for="card_title">Title:</label><br>
-    <input id="card_title" type="text" [(ngModel)]="title" name="title"><br>
+    <input matInput placeholder="Title" id="card_title" type="text" [(ngModel)]="title" name="title"><br>
 
-    <label for="card_body">Body:</label><br>
-    <input id="card_body" type="text" [(ngModel)]="body" name="body"><br>
+    <input matInput placeholder="Body" id="card_body" type="text" [(ngModel)]="body" name="body"><br>
 
-    <label for="card_tags">Tags:</label><br>
-    <input id="card_tags" type="text" [(ngModel)]="tags" name="tags"><br>
+    <input matInput placeholder="Tags" id="card_tags" type="text" [(ngModel)]="tags" name="tags"><br>
 
-    <button mat-stroked-button type="submit" (click)="addNewCard()"> Add to content list</button><br>
+    <button mat-flat-button color="accent" type="submit" (click)="addNewCard()"> Add to content list</button><br>
     <p>{{errorMssg}}</p>
-  </form>
+  </mat-form-field>
 </div>
+
+<button mat-raised-button color="accent" type="submit" (click)="show()"> Add Content</button><br>

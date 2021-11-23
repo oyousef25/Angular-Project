@@ -2,17 +2,19 @@
 display the contents of the contentList in the content card's html
 -->
 <div id="items-display" class="items-display">
-  <div class="div-content-id">{{content.id}}</div>
-  <div class="div-content-author">{{content.author}}</div>
-  <div class="div-content-img" [ngSwitch]='content.imgUrl'>
-    <div *ngSwitchCase='null'>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Hummus_Dip_%2830863436677%29.jpg" width="200" height="200">
+  <mat-card>
+    <div class="div-content-id">{{content.id}}</div><br>
+    <mat-card-title>{{content.author}}</mat-card-title><br>
+    <div class="div-content-img" [ngSwitch]='content.imgUrl'>
+      <div *ngSwitchCase='null'>
+        <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Hummus_Dip_%2830863436677%29.jpg" width="200" height="200"/>
+      </div>
+      <div *ngSwitchDefault>
+        <img mat-card-image [src]="content.imgUrl" (click)="showId(content.id)" width="200" height="200">
+      </div>
     </div>
-    <div *ngSwitchDefault>
-      <img [src]="content.imgUrl" (click)="showId(content.id)" width="200" height="200">
-    </div>
-  </div>
-  <div appUnderline changeType="underlineTitle" class="div-content-type">{{content.type}}</div>
-  <div class="div-content-title">{{content.title}}</div>
-  <div appUnderline changeType="boldTags" class="div-content-tags" *ngFor="let tag of content.tags">{{tag}}</div>
+    <mat-card-subtitle>{{content.type}}</mat-card-subtitle>
+    <mat-card-content>{{content.title}}</mat-card-content>
+<!--    <mat-card-footer appUnderline changeType="boldTags" class="div-content-tags" *ngFor="let tag of content.tags">{{tag}}</mat-card-footer><br>-->
+  </mat-card>
 </div>

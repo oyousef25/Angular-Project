@@ -90,4 +90,8 @@ export class CreateContentComponent implements OnInit {
   this.body = "";
   this.tags = [];
   }
+
+  show(){
+
+  }
 }
