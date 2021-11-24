@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 
 // @ts-ignore
 @NgModule({
@@ -25,7 +27,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     ContentExistPipe,
     UnderlineDirective,
     CreateContentComponent,
-    MessagesComponent
+    MessagesComponent,
+    CreateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

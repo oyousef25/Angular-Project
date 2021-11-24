@@ -1,22 +1,5 @@
-<div class="div-create-content-form">
-  <mat-form-field>
-    <input placeholder="ID" [(ngModel)]="id" name="id"><br>
 
-    <input matInput placeholder="Author" id="card_author" type="text" [(ngModel)]="author" name="author"><br>
 
-    <input matInput placeholder="Image URL"  id="card_imgurl" type="text" [(ngModel)]="imgUrl" name="imgUrl"><br>
-
-    <input matInput placeholder="Type" id="card_type" type="text" [(ngModel)]="type" name="type"><br>
-
-    <input matInput placeholder="Title" id="card_title" type="text" [(ngModel)]="title" name="title"><br>
-
-    <input matInput placeholder="Body" id="card_body" type="text" [(ngModel)]="body" name="body"><br>
-
-    <input matInput placeholder="Tags" id="card_tags" type="text" [(ngModel)]="tags" name="tags"><br>
-
-    <button mat-flat-button color="accent" type="submit" (click)="addNewCard()"> Add to content list</button><br>
-    <p>{{errorMssg}}</p>
-  </mat-form-field>
+<div class="dialog-button">
+  <button mat-raised-button color="accent" type="submit" (click)="show()"> Add Content</button><br>
 </div>
-
-<button mat-raised-button color="accent" type="submit" (click)="show()"> Add Content</button><br>
