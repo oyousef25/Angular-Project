@@ -16,6 +16,9 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { CreateDialogComponent } from './create-dialog/create-dialog.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from "@angular/router";
+import { ContentDetailComponent } from './content-detail/content-detail.component';
 
 // @ts-ignore
 @NgModule({
@@ -28,7 +31,9 @@ import { CreateDialogComponent } from './create-dialog/create-dialog.component';
     UnderlineDirective,
     CreateContentComponent,
     MessagesComponent,
-    CreateDialogComponent
+    CreateDialogComponent,
+    NotFoundComponent,
+    ContentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,26 @@ import { CreateDialogComponent } from './create-dialog/create-dialog.component';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule.forRoot([
+      {
+        path: 'content/:id',
+        component: ContentDetailComponent
+      },
+      {
+        path: 'content',
+        component: ContentListComponent
+      },
+      {
+        path: '',
+        component: AppComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
+
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
