@@ -19,6 +19,9 @@ import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {RouterModule} from "@angular/router";
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import {InMemoryDataService} from "./services/in-memory-data.service";
 
 // @ts-ignore
 @NgModule({
@@ -43,6 +46,12 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
     MatCardModule,
     MatFormFieldModule,
     MatDialogModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {
+        dataEncapsulation: false,
+        delay: 1000
+    }),
     RouterModule.forRoot([
       {
         path: 'content/:id',

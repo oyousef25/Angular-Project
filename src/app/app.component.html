@@ -1,7 +1,13 @@
 <body>
 <div >
   <app-messages></app-messages>
-  <app-content-list></app-content-list>
+<!--  <app-content-list></app-content-list>-->
   <!--  <app-content-card></app-content-card>-->
+
+  <br>
+  <a routerLink="content" routerLinkActive="hummus">Content List</a><br>
+  <a routerLink="content/1" routerLinkActive="hummus">Content Details</a><br>
+  <a routerLink="thiswillnotwork" routerLinkActive="hummus">Invalid page link</a><br>
+  <router-outlet></router-outlet>
 </div>
 </body>

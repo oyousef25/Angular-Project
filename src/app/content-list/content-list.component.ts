@@ -11,34 +11,43 @@ import {MessageService} from "../message.service";
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  @Input() contentArray: Content[];
-  @Input() content: Content;
+  //@Input() contentArray: Content[];
+  contentArray: Content[]
 
   constructor(private contentService: ContentService, private messageService: MessageService) {
-    this.content = {
-      id: 0,
-      author: '',
-      title: '',
-      body: '',
-      imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
-      type: "string",
-      tags: ["string"]
-    }
+    // this.content = {
+    //   id: 0,
+    //   author: '',
+    //   title: '',
+    //   body: '',
+    //   imgUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+    //   type: "string",
+    //   tags: ["string"]
+    // }
 
     this.contentArray = [];
   }
 
   ngOnInit(): void {
-    //this.contentArray = this.contentService.getContent();
-
-    this.contentService.getContentObs().subscribe(
-      contentArray => this.contentArray = contentArray
+    this.contentService.getContent().subscribe(
+      contentList => {
+        this.contentArray = contentList
+      }
     );
+
+    this.contentArray = Object.assign([], this.contentArray)
+
+    // this.contentService.getContent();
+
+    // this.contentService.getContentObs().subscribe(
+    //   contentArray => this.contentArray = contentArray
+    // );
   }
 
   addToContentList(newContentCard: Content){
     this.contentArray.push(newContentCard);
     this.contentArray = Object.assign([], this.contentArray);
+
     console.log("content-list test");
     console.log(this.contentArray);
   }

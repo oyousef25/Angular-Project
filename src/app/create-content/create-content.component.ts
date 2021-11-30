@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Content} from "../../../helper-files/Content";
 import {MatDialog} from "@angular/material/dialog";
 import {CreateDialogComponent} from "../create-dialog/create-dialog.component";
+import {ContentService} from "../services/content.service";
 
 
 @Component({
@@ -11,11 +12,16 @@ import {CreateDialogComponent} from "../create-dialog/create-dialog.component";
 })
 export class CreateContentComponent implements OnInit {
   @Output() newCardEvent = new EventEmitter<Content>();
+  contentArray: Content[] = [];
 
-  constructor(public dialog: MatDialog) {
+  constructor(private contentService: ContentService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
+    this.contentService.getContent().subscribe(
+      contentList => {
+        this.contentArray = contentList;
+    });
   }
 
   show(){

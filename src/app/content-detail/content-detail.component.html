@@ -1,1 +1,19 @@
-<p>content-detail works!</p>
+<div id="items-display" class="items-display">
+  <mat-card>
+    <div class="div-content-id">{{contentItem.id}}</div><br>
+    <mat-card-title>{{contentItem.author}}</mat-card-title><br>
+    <div class="div-content-img" [ngSwitch]='contentItem.imgUrl'>
+      <div *ngSwitchCase='null'>
+        <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Hummus_Dip_%2830863436677%29.jpg" width="200" height="200"/>
+      </div>
+      <div *ngSwitchDefault>
+        <img mat-card-image [src]="contentItem.imgUrl" width="200" height="200">
+      </div>
+    </div>
+    <mat-card-subtitle>{{contentItem.type}}</mat-card-subtitle>
+    <mat-card-content>{{contentItem.title}}</mat-card-content>
+
+    <button mat-basic-chip><a [routerLink]="['/content']" routerLinkActive="hummus">Go Back</a></button>
+    <!--    <mat-card-footer appUnderline changeType="boldTags" class="div-content-tags" *ngFor="let tag of content.tags">{{tag}}</mat-card-footer><br>-->
+  </mat-card>
+</div>

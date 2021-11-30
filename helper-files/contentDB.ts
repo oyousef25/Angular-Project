@@ -2,7 +2,7 @@ import {Input} from "@angular/core";
 import {Content} from "./Content";
 
 export const CONTENTARRAY: Content[] = [{
-  id: 1023,
+  id: 5,
   author: 'Omar',
   title: 'Mobile development and the future',
   body: 'Coding is amazing and stressful',
@@ -11,7 +11,7 @@ export const CONTENTARRAY: Content[] = [{
   tags: ["string"]
   },
   {
-    id: 1022,
+    id: 10,
     author: 'Tom',
     title: 'Tom is cool',
     body: 'He is cool because he is',
@@ -20,7 +20,7 @@ export const CONTENTARRAY: Content[] = [{
     tags: ["string"]
   },
   {
-    id: 1021,
+    id: 15,
     author: 'Dawn',
     title: 'Dawn is a good person',
     body: 'She is a good person!',
@@ -29,7 +29,7 @@ export const CONTENTARRAY: Content[] = [{
     tags: ["string"]
   },
   {
-    id: 1021,
+    id: 20,
     author: 'Alex',
     title: 'Alex is amazing in Js',
     body: 'We all know that',
@@ -38,7 +38,7 @@ export const CONTENTARRAY: Content[] = [{
     tags: ["string"]
   },
   {
-    id: 1021,
+    id: 25,
     author: 'Peter',
     title: 'Peter is smart',
     body: 'I agree!',

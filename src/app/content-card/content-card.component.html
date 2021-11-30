@@ -15,6 +15,8 @@ display the contents of the contentList in the content card's html
     </div>
     <mat-card-subtitle>{{content.type}}</mat-card-subtitle>
     <mat-card-content>{{content.title}}</mat-card-content>
+
+    <button mat-basic-chip><a [routerLink]="['/content',content.id]" routerLinkActive="hummus">Content Detail</a></button>
 <!--    <mat-card-footer appUnderline changeType="boldTags" class="div-content-tags" *ngFor="let tag of content.tags">{{tag}}</mat-card-footer><br>-->
   </mat-card>
 </div>
