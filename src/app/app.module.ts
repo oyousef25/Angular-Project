@@ -22,6 +22,8 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./services/in-memory-data.service";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // @ts-ignore
 @NgModule({
@@ -70,7 +72,13 @@ import {InMemoryDataService} from "./services/in-memory-data.service";
         component: NotFoundComponent
       }
 
-    ])
+    ]),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
