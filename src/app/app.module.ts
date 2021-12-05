@@ -24,6 +24,7 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./services/in-memory-data.service";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // @ts-ignore
 @NgModule({
@@ -48,6 +49,7 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatSnackBarModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {

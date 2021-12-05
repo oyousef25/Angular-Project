@@ -3,6 +3,7 @@ import {Content} from "../../../helper-files/Content";
 import {CreateContentComponent} from "../create-content/create-content.component";
 import {ContentService} from "../services/content.service";
 import {MessageService} from "../message.service";
+import {AppUpdateService} from "../services/app-update.service";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ContentListComponent implements OnInit {
   //@Input() contentArray: Content[];
   contentArray: Content[]
 
-  constructor(private contentService: ContentService, private messageService: MessageService) {
+  constructor(private contentService: ContentService, private updateService: AppUpdateService, private messageService: MessageService) {
     // this.content = {
     //   id: 0,
     //   author: '',
